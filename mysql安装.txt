@@ -1,0 +1,8 @@
+
+wget https://repo.mysql.com//mysql-apt-config_0.8.15-1_all.deb
+sudo chmod +x mysql-apt-config_0.8.15-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
+sudo apt update
+sudo apt upgrade
+sudo apt install mysql-community-client
+sudo apt install mysql-community-server
