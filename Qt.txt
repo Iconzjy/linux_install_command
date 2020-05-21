@@ -1,0 +1,3 @@
+wget https://mirrors.tuna.tsinghua.edu.cn/qt/archive/online_installers/3.2/qt-unified-linux-x64-3.2.2-online.run
+
+sudo chmod +x qt-unified-linux-x64-3.2.2-online.run
