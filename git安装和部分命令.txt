@@ -1,0 +1,9 @@
+sudo apt install git
+
+#命令
+git config --global user.email "zengjyxxn@163.com"
+git config --global user.name "Iconzjy"
+
+git add .
+git commit
+git push
