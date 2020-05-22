@@ -1,0 +1,42 @@
+sudo dpkg --add-architecture i386
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' 
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+
+字体乱码解决
+复制windows下的C:\window\Font\simsun.ttc到~/.wine/drive_c/windows/Fonts中
+cd ~/.wine/
+touch fonts.reg
+
+	REGEDIT4 
+	[HKEY_LOCAL_MACHINE\Software\Microsoft\NT\CurrentVersion\FontSubstitutes] 
+	"Arial"="simsun" 
+	"Arial CE,238"="simsun" 
+	"Arial CYR,204"="simsun" 
+	"Arial Greek,161"="simsun" 
+	"Arial TUR,162"="simsun" 
+	"Courier New"="simsun" 
+	"Courier New CE,238"="simsun" 
+	"Courier New CYR,204"="simsun" 
+	"Courier New Greek,161"="simsun" 
+	"Courier New TUR,162"="simsun" 
+	"FixedSys"="simsun" 
+	"Helv"="simsun" 
+	"Helvetica"="simsun" 
+	"MS Sans Serif"="simsun" 
+	"MS Shell Dlg"="simsun" 
+	"MS Shell Dlg 2"="simsun" 
+	"System"="simsun" 
+	"Tahoma"="simsun" 
+	"Times"="simsun" 
+	"Times New Roman CE,238"="simsun" 
+	"Times New Roman CYR,204"="simsun" 
+	"Times New Roman Greek,161"="simsun" 
+	"Times New Roman TUR,162"="simsun" 
+	"Tms Rmn"="simsun" 
+
+	（注：按照windows的格式，最后一行之后要敲回车符） 
+regedit fonts.reg 
+最后，打开regedit（终端直接输入这个单词），~/.wine/drive_c/windows/regedit.exe,依次找到HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes，将该键下的MS Shell Dlg和MS Shell Dlg2键值删除。 
+退出regedit.exe
